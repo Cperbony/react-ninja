@@ -7,8 +7,8 @@ import Title from './title'
 const App = React.createClass({
     render: function () {
         return (
-            <div>
-                <Title name='Claudinei Perboni'/>
+            <div className="container">
+                <Title name='Claudinei Perboni' lastname {{ first: 'Cla', last: 'Perboni'}}/>
             </div>
         )
     }
