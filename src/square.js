@@ -3,15 +3,15 @@
 import React from 'react'
 
 const Square = ({ color }) => (
-    <div style = {{
-        backgoroundColor: color,
-        height: '100px',
-        width: '100px'
-    }} />
+  <div style={{
+    backgoroundColor: color,
+    height: '100px',
+    width: '100px'
+  }} />
 )
 
 Square.defaultProps = {
-    color: 'red'
+  color: 'red'
 }
 
 export default Square

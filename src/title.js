@@ -3,12 +3,12 @@
 import React from 'react'
 
 const Title = ({ name, sobrenome }) => {
-    <h1>Olá {`${name} ${lastname}`}</h1>
+  <h1>Olá {`${name} ${lastname}`}</h1>
 }
 
 Title.defaultProps = {
-    name: 'Desconhecido',
-    sobrenome: 'Sem sobrenome'
+  name: 'Desconhecido',
+  sobrenome: 'Sem sobrenome'
 }
 
 // const Title = function (){

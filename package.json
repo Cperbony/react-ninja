@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js && standard --fix"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
