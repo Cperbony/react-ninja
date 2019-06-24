@@ -10,6 +10,10 @@ const validate = require('webpack-validator')
 module.exports = validate({
     devtool: 'source-map',
 
+    stats: {
+        warnings: 'false'
+    },
+
     entry: [
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:3000',
@@ -34,12 +38,12 @@ module.exports = validate({
             include: /src/,
             loader: 'standard'
         }],
-        
+
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
             include: /src/,
             loader: 'babel'
-        }]
+        }],
     }
 })

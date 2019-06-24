@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "722f5f3548193039e715"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fc720df42a372067fcbf"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -40696,7 +40696,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _button = __webpack_require__(431);
+	var _square = __webpack_require__(431);
+	
+	var _square2 = _interopRequireDefault(_square);
+	
+	var _button = __webpack_require__(432);
 	
 	var _button2 = _interopRequireDefault(_button);
 	
@@ -40715,26 +40719,41 @@
 	    function App() {
 	        _classCallCheck(this, App);
 	
-	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	        console.log('componentWillMount');
+	
+	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+	
+	        _this.state = {
+	            color: 'green'
+	        };
+	        return _this;
 	    }
 	
 	    _createClass(App, [{
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            console.log('componentWillMount');
+	        }
+	    }, {
 	        key: 'render',
-	
-	        //Renderizamos como um objeto.
 	        value: function render() {
+	            var _this2 = this;
+	
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'container' },
-	                _react2.default.createElement(
-	                    _button2.default,
-	                    null,
-	                    _react2.default.createElement(
-	                        'span',
-	                        null,
-	                        'Texto'
-	                    )
-	                )
+	                null,
+	                _react2.default.createElement(_square2.default, { color: this.state.color }),
+	                ['red', 'green', 'blue'].map(function (color) {
+	                    return _react2.default.createElement(
+	                        _button2.default,
+	                        {
+	                            key: color,
+	                            handleClick: function handleClick() {
+	                                return _this2.setState({ color: color });
+	                            } },
+	                        color
+	                    );
+	                })
 	            );
 	        }
 	    }]);
@@ -40760,6 +40779,51 @@
 
 /***/ }),
 /* 431 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(6);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Square = function Square(_ref) {
+	    var color = _ref.color;
+	    return _react2.default.createElement('div', { style: {
+	            backgoroundColor: color,
+	            height: '100px',
+	            width: '100px'
+	        } });
+	};
+	
+	Square.defaultProps = {
+	    color: 'red'
+	};
+	
+	var _default = Square;
+	exports.default = _default;
+	;
+	
+	(function () {
+	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	        return;
+	    }
+	
+	    __REACT_HOT_LOADER__.register(Square, 'Square', '/home/perboni/projetos/react-ninja/src/square.js');
+	
+	    __REACT_HOT_LOADER__.register(_default, 'default', '/home/perboni/projetos/react-ninja/src/square.js');
+	})();
+
+	;
+
+/***/ }),
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
