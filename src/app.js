@@ -23,12 +23,15 @@ class App extends Component {
   }
 
   render() {
+    console.log('render')
+
     return (
       <div>
-        {this.state.showTimer && <Timer />}
+        <Timer time={this.state.time} />
+
         <button onClick={() => {
-          this.setState({ showTimer: !this.state.showTimer })
-        }}>Show / Hide</button>
+          this.setState({ time: this.state.time + 10 })
+        }}>Change props</button>
       </div>
     )
   }
