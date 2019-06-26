@@ -16,7 +16,19 @@ class App extends Component {
 
   render() {
     return (
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          console.log('event', e)
+        }}
+
+        onChange={(e) => {
+          console.log('name', e.target.value)
+          console.log('value', e.target.value)
+        }}>
+
+        <input type='name' name='name' /><br />
+        <input type='eamil' name='email' /><br />
         <input type='text' value={this.state.value} onChange={(e) => {
           console.log(e.nativeEvent)
           this.setState({
@@ -38,6 +50,7 @@ class App extends Component {
 
         <input type='radio' name='rd' value='1' defaultChecked /> Radio 1
         <input type='radio' name='rd' value='2' /> Radio 2
+
         <br />
 
         <select multiple value={this.state.value} onChange={(e) => {
@@ -49,6 +62,16 @@ class App extends Component {
           <option value='2'>Opção 2</option>
           <option value='3'>Opção 3</option>
         </select>
+
+        <br />
+
+        <textarea defaultValue={'textarea\n value\ncom defaultValue'} />
+
+        <br />
+
+        <button type='submit'>Enviar</button>
+
+
       </form>
     )
   }
