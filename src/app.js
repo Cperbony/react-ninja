@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      value: 'Valor Inicial',
+      value: '2',
       checked: false
     }
   }
@@ -38,6 +38,17 @@ class App extends Component {
 
         <input type='radio' name='rd' value='1' defaultChecked /> Radio 1
         <input type='radio' name='rd' value='2' /> Radio 2
+        <br />
+
+        <select multiple value={this.state.value} onChange={(e) => {
+          this.setState({
+            value: e.target.value
+          })
+        }}>
+          <option value='1'>Opção 1</option>
+          <option value='2'>Opção 2</option>
+          <option value='3'>Opção 3</option>
+        </select>
       </form>
     )
   }
